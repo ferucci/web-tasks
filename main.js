@@ -1,15 +1,54 @@
 "use strict";
 
-let num = 266219;
-const array = Array.from(String(num));
-let item = 1;
+let lang = prompt('На каком языке вывести сегодняшнюю дату?' + ' ' + 'ru / en');
+let date = new Date();
+let options = {
+  year: 'numeric',
+  month: 'long',
+  weekday: 'long',
+  day: '2-digit'
+};
 
-for (let i = 0; i < array.length; i++) {
-  item = item * array[i];
+let langArr = [
+  ["ru", 'en']
+];
+
+let namePerson = prompt('Как вас зовут?');
+let condition =
+  (namePerson === 'Артём') ? 'Директор' :
+    (namePerson === 'Александр') ? 'Преподаватель' :
+      'Студент';
+
+
+
+if (lang === 'ru') {
+  console.log(date.toLocaleString('ru', options));
+} else if (lang === 'en') {
+  console.log(date.toLocaleString('en-GB', options));
+} else {
+  console.log(date.toLocaleString('zh-Hans-CN', options));
 }
-console.log(item);
 
-let expo = item ** 3;
-let expoArr = Array.from(String(expo));
+switch (lang) {
+  case 'ru':
+    console.log(date.toLocaleString('ru', options));
+    break;
+  case 'en':
+    console.log(date.toLocaleString('en-GB', options));
+    break;
+  default:
+    console.log('Тогда на китайском', date.toLocaleString('zh-Hans-CN', options));
+}
 
-console.log(expoArr[0], expoArr[1]);
+
+
+for (let i = 0; i < langArr.length; i++) {
+
+  for (let i = 0; i < langArr.length; i++) {
+    (langArr[0][0]) = console.log(date.toLocaleString('ru', options));
+    (langArr[0][1]) = console.log(date.toLocaleString('en-GB', options));
+  }
+
+}
+
+console.log(condition);
