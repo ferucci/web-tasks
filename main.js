@@ -1,9 +1,9 @@
 "use strict";
 
-let namePerson = prompt('Как вас зовут?');
-let condition =
-  (namePerson === 'Артём') ? 'Директор' :
-    (namePerson === 'Александр') ? 'Преподаватель' :
+let condition = prompt('Как вас зовут?');
+let namePerson =
+  (condition === 'Артём') ? 'Директор' :
+    (condition === 'Александр') ? 'Преподаватель' :
       'Студент';
 
 let date = new Date();
@@ -43,7 +43,7 @@ switch (lang) {
     console.log('Тогда на китайском', date.toLocaleString('zh-Hans-CN', options));
 }
 
-console.log('Приветствую тебя' + ' ' + condition);
+console.log('Приветствую' + ' ' + namePerson);
 
 
 
