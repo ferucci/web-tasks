@@ -1,5 +1,4 @@
 "use strict";
-let lang;
 
 let date = new Date();
 let options = {
@@ -9,9 +8,16 @@ let options = {
   day: '2-digit'
 };
 
-let langArr = [
-  ["ru", 'en']
-];
+let lang = prompt('h');
+
+let langArr = new Map([
+  ['ru', date.toLocaleString('ru', options)],
+  ['en', date.toLocaleString('en-GB', options)]
+]);
+
+lang === String('en') ? console.log(langArr.get('en')) : console.log(langArr.get('ru'));
+
+
 
 if (lang === 'ru') {
   console.log(date.toLocaleString('ru', options));
@@ -34,14 +40,6 @@ switch (lang) {
 
 
 
-for (let i = 0; i < langArr.length; i++) {
-
-  for (let i = 0; i < langArr.length; i++) {
-    (langArr[0][0]) = console.log(date.toLocaleString('ru', options));
-    (langArr[0][1]) = console.log(date.toLocaleString('en-GB', options));
-  }
-
-}
 
 
 
