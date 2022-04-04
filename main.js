@@ -4,9 +4,9 @@ let stroka = prompt('Приветствую JS, я прекрасно себя �
 
 const result = function (a) {
   const result2 = function () {
-    if (a !== 'string') {
+    if (typeof a !== 'string') {
       console.log('В качестве аргумента передана НЕ строка');
-    } else if (a.length > a[30]) {
+    } else if (a.length > [30]) {
       return a.slice(0, 30);
     }
   };
