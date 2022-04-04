@@ -1,5 +1,11 @@
 "use strict";
 
+let namePerson = prompt('Как вас зовут?');
+let condition =
+  (namePerson === 'Артём') ? 'Директор' :
+    (namePerson === 'Александр') ? 'Преподаватель' :
+      'Студент';
+
 let date = new Date();
 let options = {
   year: 'numeric',
@@ -8,7 +14,7 @@ let options = {
   day: '2-digit'
 };
 
-let lang = prompt('h');
+let lang = prompt('На каком языке вывести сегодняшнюю дату?' + ' ' + 'ru / en');
 
 let langArr = new Map([
   ['ru', date.toLocaleString('ru', options)],
@@ -16,7 +22,6 @@ let langArr = new Map([
 ]);
 
 lang === String('en') ? console.log(langArr.get('en')) : console.log(langArr.get('ru'));
-
 
 
 if (lang === 'ru') {
@@ -38,6 +43,7 @@ switch (lang) {
     console.log('Тогда на китайском', date.toLocaleString('zh-Hans-CN', options));
 }
 
+console.log('Приветствую тебя' + ' ' + condition);
 
 
 
