@@ -1,20 +1,27 @@
 "use strict";
 
-let stroka = prompt('Приветствую JS, я прекрасно себя чувствую и хотел бы, чтоб после тридцатой строки обрезать текст');
+let string = prompt('Приветствую JS, нужно после тридцатого символа обрезать текст');
+
+const isNumber = function (num) {
+  return !isNaN(parseFloat(num)) && isFinite(num);
+}
 
 const result = function (a) {
+  a.trim();
   const result2 = function () {
-    if (typeof a !== 'string') {
+    if (isNumber(a)) {
       console.log('В качестве аргумента передана НЕ строка');
-    } else if (a.length > [30]) {
-      return a.slice(0, 30);
+    } else if (a.length > 30) {
+      a = a.slice(0, 30) + '...';
+    } else {
+      return a;
     }
   };
   result2();
   return a.trim();
 };
 
-console.log(result(stroka) + '...');
+console.log(result(string));
 
 
 
